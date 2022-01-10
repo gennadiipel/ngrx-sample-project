@@ -1,11 +1,11 @@
 import { createAction, props } from "@ngrx/store";
 
 export namespace CounterActions {
-    const increaseCount = createAction(
+    export const increaseCount = createAction(
         'INCREASE_COUNT',
     )
 
-    const decreaseCount = createAction(
+    export const decreaseCount = createAction(
         'DECREASE_COUNT'
     )
 }
