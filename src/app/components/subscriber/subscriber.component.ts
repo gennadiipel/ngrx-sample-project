@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { CounterSelectors } from 'src/app/store/selectors/counter.selectors';
 
 @Component({
   selector: 'app-subscriber',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SubscriberComponent implements OnInit {
 
-  constructor() { }
+  counter$!: Observable<number>
+
+  constructor(
+    private _store$: Store
+  ) { }
 
   ngOnInit(): void {
+    this.counter$ = this._store$.select(CounterSelectors.selectFeatureCount)
   }
 
 }

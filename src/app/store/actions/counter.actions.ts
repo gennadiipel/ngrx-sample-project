@@ -6,6 +6,11 @@ export namespace CounterActions {
     )
 
     export const decreaseCount = createAction(
-        'DECREASE_COUNT'
+        'DECREASE_COUNT',
+    )
+
+    export const setStep = createAction(
+        'SET_STEP',
+        props<{step: number}>()
     )
 }

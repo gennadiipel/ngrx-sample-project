@@ -2,6 +2,7 @@
     <h2>
         Action component
     </h2>
-    <button>i++</button>
-    <button>i--</button>
+    <button (click)="increase()">i++</button>
+    <input type="number" [(ngModel)]="step" (change)="updateStep()">
+    <button (click)="decrease()">i--</button>
 </div>
